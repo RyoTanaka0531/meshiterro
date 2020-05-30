@@ -71,3 +71,4 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+ssh -i ~/.ssh/practice-aws.pem ec2-user@18.180.137.75
