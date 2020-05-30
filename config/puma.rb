@@ -9,7 +9,7 @@ threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-port        ENV.fetch("PORT") { 3000 }
+#port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
@@ -43,9 +43,9 @@ if Rails.env.production?
     pidfile File.join(rails_root, 'tmp', 'pids', 'puma.pid')
     state_path File.join(rails_root, 'tmp', 'pids', 'puma.state')
     stdout_redirect(
-      File.join(rails_root, 'log', 'puma.log'),
-      File.join(rails_root, 'log', 'puma-error.log'),
-      true
+        File.join(rails_root, 'log', 'puma.log'),
+        File.join(rails_root, 'log', 'puma-error.log'),
+        true
     )
     # デーモン
     daemonize
