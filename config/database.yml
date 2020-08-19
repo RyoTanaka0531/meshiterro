@@ -9,3 +9,4 @@ development:
   <<: *default
   host: db
   database: docker_development
+
