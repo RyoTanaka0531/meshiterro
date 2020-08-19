@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_03_21_032505) do
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_comments", force: :cascade do |t|
+  create_table "post_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
     t.integer "post_image_id"
@@ -27,17 +27,16 @@ ActiveRecord::Schema.define(version: 2020_03_21_032505) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_images", force: :cascade do |t|
+  create_table "post_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.text "shop_name"
     t.string "image_id"
-    t.text "caprion"
+    t.text "caption"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "caption"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
