@@ -1,20 +1,12 @@
 default: &default
   adapter: mysql2
-  encoding: utf8mb4
-  charset: utf8mb4
-  collation: utf8mb4_general_ci
+  encoding: utf8
   pool: 5
-  #以下の3行が重要
-  username: root
-  password:
-  host: db
-  #
-  timeout: 5000
+  username: appuser
+  password: password
 
 development:
   <<: *default
-  database: meshiterro_development #sample_appの部分は、アプリ名に応じて修正
+  host: db
+  database: docker_development
 
-test:
-  <<: *default
-  database: meshiterro_test #sample_appの部分は、アプリ名に応じて修正
